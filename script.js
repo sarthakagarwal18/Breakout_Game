@@ -145,6 +145,9 @@ function collision(){
                     if(y-radius==b.y+brickHeight || y+radius==b.y){
                         
                         vely=-vely;
+
+                        increaseXSpeed();
+
                         b.status=0;
                         score++;
                         
@@ -276,4 +279,10 @@ function mouseMoveHandler(e){
         
     }
     
+}
+
+function increaseXSpeed(){
+    increase_factor = 0.05
+    sign = velx && velx / Math.abs(velx)
+    velx += increase_factor;
 }
