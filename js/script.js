@@ -1,3 +1,5 @@
+var colors = ['#FFA500', '#FFFF00', '#008000', '#DC143C', '#21C795']
+
 var canvas=null,ctx=null,c,r,flag=0;
 var h=320, w=485;  //canvas  height and width
 var radius=8,count=0,score=0,lives=3;
@@ -50,23 +52,12 @@ function bricksetup(){
        
             bricks[c][r] = { x: 0, y: 0, status: 1 };   //status is for marking whether we want to paint that brick or not
             
-            if(count%4==0){
-                bricks[c][r].color="yellow";
-            }
-            else if(count%4==1){
-                bricks[c][r].color="green";
-            }
-            else if(count%4==2){
-                bricks[c][r].color="crimson";
-            }
-            else if(count%4==3){
-                bricks[c][r].color="orange";
-            }
-            count++;
-            
+            num = parseInt(Math.random()*10 % colors.length);
+            bricks[c][r].color = colors[num];
+
+            count++;            
         }
     }
-    
 }
 
 function drawBall(){
