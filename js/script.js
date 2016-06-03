@@ -23,11 +23,14 @@ $(document).ready(function(){
 
     var strt=document.getElementById('start');
     var pau=document.getElementById('pause');
-    strt.addEventListener("click", function(){if(flag==0){flag=1; draw();}}, false);
-    pau.addEventListener("click", function(){flag=0;}, false);
+    
+    strt.addEventListener("click", game_start_action(), false);
+    
+    pau.addEventListener("click", game_pause_action(), false);
+    
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);   
-    document.addEventListener("mousemove", mouseMoveHandler, false);   
+    document.addEventListener("mousemove", mouseMoveHandler, false);
     
 });
 
@@ -235,19 +238,21 @@ function draw(){
 function keyDownHandler(e) {
     // 37 for left key
     // 39 for right key
+    // 32 for spacebar key
+    
     if(e.keyCode == 39) {
         rkey = true;
-    }
-    else if(e.keyCode == 37) {
+    } else if(e.keyCode == 37) {
         lkey = true;
+    } else if(e.keyCode == 32) {
+        spacebar_action();
     }
 }
 
 function keyUpHandler(e) {
     if(e.keyCode == 39) {
         rkey = false;
-    }
-    else if(e.keyCode == 37) {
+    } else if(e.keyCode == 37) {
         lkey = false;
     }
 }
@@ -276,4 +281,29 @@ function increaseXSpeed(){
     increase_factor = 0.05
     sign = velx && velx / Math.abs(velx)
     velx += increase_factor;
+}
+
+function spacebar_action(){
+    if(flag == 0){
+        game_start_action();
+    } else {
+        game_pause_action();
+    }
+}
+
+function game_start_action(){
+    if(flag == 0){
+        flag = 1;
+        draw();
+    }
+
+    $("#start").addClass('hidden');
+    $("#pause").removeClass('hidden');
+}
+
+function game_pause_action(){
+    flag = 0;
+
+    $("#pause").addClass('hidden');
+    $('#start').removeClass('hidden');
 }
