@@ -212,7 +212,7 @@ function draw(){
             document.location.reload();
             score = 0;
         } else {
-            flag = 1
+            flag = 1;
             paddleX = (w - paddleWidth) / 2;
             x = paddleX + paddleWidth / 2;
             y = h - paddleHeight - radius;
