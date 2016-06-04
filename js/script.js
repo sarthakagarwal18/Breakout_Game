@@ -184,6 +184,22 @@ function draw(){
         vely = -vely;
     } else if(y + vely == h - radius - paddleHeight && x >= paddleX && x <= paddleX + paddleWidth){
         vely = -vely;
+
+        // Change velx based on where the ball strikes the paddle
+        var center = paddleX + paddleWidth/2;
+        var hitPos = x - center;
+
+        velx = velx + (hitPos/7.5)          // Keeping the max change on paddle hit to +-5
+
+        // Limit maximum x-velocity. Play with these values to get optimum settings
+        maxVel = 6;
+        if(velx>maxVel) {
+            velx = maxVel;
+        }
+        else if(velx<-maxVel) {
+            velx = -maxVel;
+        }
+
     } else if(y + vely > h - radius){
         
 //        alert("Game Over");
@@ -196,6 +212,7 @@ function draw(){
             document.location.reload();
             score = 0;
         } else {
+            flag = 1
             paddleX = (w - paddleWidth) / 2;
             x = paddleX + paddleWidth / 2;
             y = h - paddleHeight - radius;
