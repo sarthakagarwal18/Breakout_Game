@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Breakout Game</title>
-        <link href="css/styles.css" rel="stylesheet">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-    </head>
-    <body class="yo">
-       
-       <div class="heading container">
-           <h2>Breakout Game</h2>
-           <p>by Sarthak Agarwal</p>
-           <hr>
-           <p>Use Arrow Keys or Mouse to play.</p>
-       </div>
-       
-           <canvas id="myCanvas"></canvas>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
 
-        
-        <div class="container playbtn">
-            <div class="row">
-                <button type="button" class="btn btn-primary col-sm-1 col-sm-offset-4" id="start" autofocus>Start</button>
-                <button type="button" class="btn btn-danger col-sm-1 col-sm-offset-2" id="pause">Pause</button>
-            </div>
+    <link rel="shortcut icon" href="img/613768a7bc0f8af4e813495c03389797d140c03e593db8607b03f1e4.png">
+    <title>Breakout Game | Brick Breaking Game</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="heading container">
+        <h2>Breakout Game</h2>
+        <!-- <p>by Sarthak Agarwal</p> -->
+        <hr>
+        <p>Use Arrow Keys or Mouse to play.</p>
+    </div>
+   
+    <canvas id="myCanvas"></canvas>
+    
+    <div class="container playbtn">
+        <div class="row text-center">
+            <button type="button" class="btn btn-lg btn-primary" id="start" autofocus>Start / Resume</button>
+            <button type="button" class="btn btn-lg btn-danger hidden" id="pause">Pause</button>
         </div>
-        
-        <footer>Made by <span class="name">Sarthak</span> with <span class="heart">&hearts;</span></footer>
-        
+    </div>
+    
+    <footer>Made by <span class="name">Sarthak</span> with <span class="heart">&hearts;</span></footer>
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/script.js"></script>
 
-    </body>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+</body>
 </html>

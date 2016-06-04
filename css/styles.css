@@ -3,23 +3,23 @@
     margin: 0;
 }
 
-.yo{
+body{
     background-color: #fcf5c4;
+    font-family: 'Titillium Web', sans-serif;
 }
-
-
 
 .heading{
     text-align: center;
 }
 
 .heading h2{
-    font-family: Bebas;
+    /*font-family: Bebas;*/
     color:darkslategray;
+    font-weight: 900;
 }
 
 .heading p{
-    font-family: Raleway;
+    /*font-family: Raleway;*/
     font-size: 15px;
     color:darkslategray;
 }
@@ -56,7 +56,7 @@ footer{
     color:white;
     text-align: center;
     padding: 10px;
-    font-family: Raleway, Times, serif;
+    /*font-family: Raleway, Times, serif;*/
     position: fixed;
     bottom: 0px;
     width: 100%;
