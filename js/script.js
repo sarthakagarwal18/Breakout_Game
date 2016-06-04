@@ -42,8 +42,8 @@ $(document).ready(function(){
     var strt = document.getElementById('start');
     var pau = document.getElementById('pause');
     
-    strt.addEventListener("click", game_start_action(), false);
-    pau.addEventListener("click", game_pause_action(), false);
+    strt.addEventListener("click", game_start_action, false);
+    pau.addEventListener("click", game_pause_action, false);
     
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);   
